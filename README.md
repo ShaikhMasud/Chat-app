@@ -1,6 +1,6 @@
 # chat_app
 
-A new Flutter project.
+It is a firebase project. I wanted to explore the functionalities of firebase clould storage. Here I had learn about the user authentication in firebase and creations of collections and nested collection. It was a nice project, I came to know various new technologies. 
 
 ## Getting Started
 
