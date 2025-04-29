@@ -69,8 +69,12 @@ class _ChatPageState extends State<ChatPage> {
         ? Alignment.centerRight
         : Alignment.centerLeft;
 
-    // Generate current time at runtime
-    final String currentTime = DateFormat.jm().format(DateTime.now());
+    // Convert timestamp safely
+    String formattedTime = '';
+    if (data['timestamp'] != null && data['timestamp'] is Timestamp) {
+      DateTime dateTime = (data['timestamp'] as Timestamp).toDate();
+      formattedTime = DateFormat.jm().format(dateTime); // e.g., 4:26 PM
+    }
 
     return Container(
       alignment: alignment,
@@ -85,13 +89,14 @@ class _ChatPageState extends State<ChatPage> {
             const SizedBox(height: 5),
             ChatBubble(
               message: data['message'],
-              time: currentTime, // pass generated current time
+              time: formattedTime,
             ),
           ],
         ),
       ),
     );
   }
+
 
   Widget _buildMessageInput() {
     return Padding(
