@@ -20,7 +20,6 @@ A real-time **chatting app** built using **Flutter** and **Firebase**, enabling 
 * Firebase Authentication
 * Firebase Cloud Firestore
 * Firebase Core
-* FlutterFire plugins
 
 ## 🧰 Architecture
 
